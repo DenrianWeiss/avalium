@@ -1,0 +1,27 @@
+{
+  "rpc": {
+    "tire_n": [
+      [
+        {
+          "rpc_url": "https://127.0.0.1:1000",
+          "rpc_weight": 1
+        }
+      ],
+      [
+        {
+          "rpc_url": "https://nodes.mewapi.io/rpc/eth",
+          "rpc_weight": 1
+        },
+        {
+          "rpc_url": "https://nodes.mewapi.io/rpc/eth",
+          "rpc_weight": 1
+        }
+      ]
+    ]
+  },
+  "serve": {
+    "server_addr": "0.0.0.0:6060",
+    "control_plane": ":6061"
+  },
+  "debug": true
+}
