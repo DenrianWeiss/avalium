@@ -9,14 +9,21 @@ import (
 )
 
 type Config struct {
-	Rpc   model.RPCList `json:"rpc" mapstructure:"rpc"`
-	Serve Serve         `json:"serve" mapstructure:"serve"`
-	Debug bool          `json:"debug" mapstructure:"debug"`
+	Rpc       model.RPCList `json:"rpc" mapstructure:"rpc"`
+	Serve     Serve         `json:"serve" mapstructure:"serve"`
+	Debug     bool          `json:"debug" mapstructure:"debug"`
+	WebSocket WebSocket     `json:"websocket" mapstructure:"websocket"`
 }
 
 type Serve struct {
 	ServerAddr   string `json:"server_addr" mapstructure:"server_addr"`
 	ControlPlane string `json:"control_plane" mapstructure:"control_plane"`
+}
+
+type WebSocket struct {
+	Upstreams     []string `json:"upstreams" mapstructure:"upstreams"`
+	Enabled       bool     `json:"enabled" mapstructure:"enabled"`
+	ListenAddress string   `json:"listen_address" mapstructure:"listen_address"`
 }
 
 var config Config
